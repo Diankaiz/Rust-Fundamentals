@@ -1,4 +1,4 @@
-I've created a comprehensive README with 15 progressive Rust problems that cover all the fundamental concepts of the language. The problems start with basic variable declarations and build up to advanced topics like lifetimes, concurrency, and macros.
+
 
 Each problem includes:
 - **Clear learning objectives** with the concepts being taught
