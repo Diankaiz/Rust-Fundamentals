@@ -49,6 +49,17 @@ mockito = "0.30"
 tempfile = "3.3"
 sqlx = { version = "0.6", features = ["runtime-tokio-rustls", "postgres", "macros", "test"] }
 
+[profile.dev]
+opt-level = 1
+overflow-checks = true
+lto = false
+codegen-units = 16
+
+[profile.release]
+opt-level = "z"
+lto = true
+codegen-units = 1
+
 [features]
 default = []
 testing = ["sqlx/test"]
