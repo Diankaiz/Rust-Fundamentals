@@ -4,3 +4,60 @@ version = "0.1.0"
 edition = "2024"
 
 [dependencies]
+serde = { version = "1.0", features = ["derive"] }
+tokio = { version = "1.0", features = ["full"] }
+reqwest = { version = "0.11", features = ["json"] }
+clap = { version = "4.0", features = ["derive"] }
+log = "0.4"
+env_logger = "0.9"
+anyhow = "1.0"
+thiserror = "1.0"
+futures = "0.3"
+chrono = "0.4"
+uuid = { version = "1.0", features = ["v4"] }   
+regex = "1.5"
+lazy_static = "1.4" 
+dotenv = "0.15"
+sqlx = { version = "0.6", features = ["runtime-tokio-rustls", "postgres", "macros"] }
+actix-web = "4.0"
+actix-rt = "2.0"
+actix-cors = "0.6"
+jsonwebtoken = "8.0"
+bcrypt = "0.12" 
+redis = { version = "0.21", features = ["tokio-comp"] } 
+
+serde_json = "1.0"
+base64 = "0.13"
+hex = "0.4"
+itertools = "0.10"
+csv = "1.1"
+zip = "0.6"
+flate2 = "1.0"
+tar = "0.4"
+
+indicatif = "0.16"
+humantime = "2.1"
+num_cpus = "1.13"
+chrono-tz = "0.6"
+url = "2.2"
+mime = "0.3"
+mime_guess = "2.0"
+
+[dev-dependencies]
+tokio = { version = "1.0", features = ["full"] }
+assert_cmd = "2.0"
+mockito = "0.30"                                
+tempfile = "3.3"
+sqlx = { version = "0.6", features = ["runtime-tokio-rustls", "postgres", "macros", "test"] }
+actix-web = "4.0"
+actix-rt = "2.0"
+actix-cors = "0.6"
+jsonwebtoken = "8.0"            
+
+[features]
+default = []
+testing = ["sqlx/test"]
+mock = ["mockito"]  
+cli = ["clap"]
+web = ["actix-web", "actix-rt", "actix-cors",
+         "jsonwebtoken", "bcrypt", "redis", "uuid", "chrono", "serde_json"]
